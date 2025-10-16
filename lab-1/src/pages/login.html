@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <nav>
+      <ul>
+        <li><a>Login</a></li>
+        <li><a href="konkurs.html">Konkurs</a></li>
+        <li><a href="uwagi.html">Uwagi</a></li>
+        <li><a href="../..">Powrót</a></li>
+      </ul>
+    </nav>
+    <form action="https://httpbin.org/post" method="post" class="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Log in</button>
+    </form>
+  </body>
+</html>
