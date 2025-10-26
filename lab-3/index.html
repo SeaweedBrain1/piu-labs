@@ -2,11 +2,61 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <main class="product">
+      <form id="order">
+        <input class="ch" type="radio" id="color-blue" name="color" checked />
+        <input class="ch" type="radio" id="color-red" name="color" />
+        <input class="ch" type="radio" id="color-green" name="color" />
+        <input class="ch" type="radio" id="color-yellow" name="color" />
+
+        <input class="ch" type="radio" id="s-s" name="size" />
+        <input class="ch" type="radio" id="s-m" name="size" checked />
+        <input class="ch" type="radio" id="s-l" name="size" />
+        <input class="ch" type="radio" id="s-xl" name="size" />
+      </form>
+
+      <section class="gallery">
+        <div class="photo" aria-label="Koszulka Polo"></div>
+      </section>
+
+      <section class="panel">
+        <header class="header">
+          <h1>Koszulka Polo</h1>
+          <span class="badge">Promocja!</span>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+            quis adipisci maiores.
+          </p>
+        </header>
+
+        <fieldset class="colors">
+          <legend>Kolor</legend>
+          <div class="switches">
+            <label for="color-blue" title="Niebieski"></label>
+            <label for="color-red" title="Czerwony"></label>
+            <label for="color-green" title="Zielony"></label>
+            <label for="color-yellow" title="Żółty"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="sizes">
+          <legend>Rozmiar</legend>
+          <div class="size-grid" role="radiogroup">
+            <label for="s-s" class="size">S</label>
+            <label for="s-m" class="size">M</label>
+            <label for="s-l" class="size">L</label>
+            <label for="s-xl" class="size">XL</label>
+          </div>
+        </fieldset>
+
+        <div class="price">59,99 zł</div>
+        <button class="cta" type="submit" form="order">🛒 Do koszyka</button>
+      </section>
+    </main>
   </body>
 </html>
