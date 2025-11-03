@@ -2,11 +2,36 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablica Kanban</title>
+    <link rel="stylesheet" href="css/kanban.css" />
+    <script src="kanban.js" defer></script>
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <div class="kanban-board">
+      <div class="kanban-column" id="todo">
+        <h2>Do zrobienia (<span class="card-count">0</span>)</h2>
+        <button class="column-btn add-card-btn">Dodaj kartę</button>
+        <button class="column-btn color-column-btn">Koloruj kolumnę</button>
+        <button class="column-btn sort-column-btn">Sortuj</button>
+        <div class="card-list" id="todo-list"></div>
+      </div>
+
+      <div class="kanban-column" id="in-progress">
+        <h2>W trakcie (<span class="card-count">0</span>)</h2>
+        <button class="column-btn add-card-btn">Dodaj kartę</button>
+        <button class="column-btn color-column-btn">Koloruj kolumnę</button>
+        <button class="column-btn sort-column-btn">Sortuj</button>
+        <div class="card-list" id="in-progress-list"></div>
+      </div>
+
+      <div class="kanban-column" id="done">
+        <h2>Zrobione (<span class="card-count">0</span>)</h2>
+        <button class="column-btn add-card-btn">Dodaj kartę</button>
+        <button class="column-btn color-column-btn">Koloruj kolumnę</button>
+        <button class="column-btn sort-column-btn">Sortuj</button>
+        <div class="card-list" id="done-list"></div>
+      </div>
+    </div>
   </body>
 </html>

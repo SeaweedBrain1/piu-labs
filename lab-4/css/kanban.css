@@ -1,0 +1,232 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #000053;
+  margin: 0;
+  padding: 20px;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.kanban-column {
+  flex: 1 1 300px;
+  background-color: #9bc0e4;
+  border-radius: 50px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 250px;
+  text-align: center;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000053;
+    text-align: center;
+  }
+}
+
+.column-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin: 0 3px 10px 3px;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: #184579;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.card-list {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.kanban-card {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  max-height: 500px;
+
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease,
+    padding 0.3s ease, background-color 0.3s ease;
+}
+
+.card-list .kanban-card:last-child {
+  margin-bottom: 0;
+}
+
+.kanban-card.card-collapsed {
+  opacity: 0;
+  max-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.card-title,
+.card-content {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+  outline: none;
+  min-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.card-title[contenteditable='true']:focus,
+.card-content[contenteditable='true']:focus {
+  background-color: #fdfdfd;
+  box-shadow: inset 0 0 0 2px #007bff;
+  -webkit-line-clamp: unset;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.card-btn {
+  background: #f1f3f5;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.2s;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.move-btn-left {
+  transform: scaleX(-1);
+  color: #007bff;
+  &:hover {
+    background-color: #007bff;
+    color: white;
+  }
+}
+.move-btn-right {
+  color: #007bff;
+  &:hover {
+    background-color: #007bff;
+    color: white;
+  }
+}
+
+.color-card-btn {
+  color: #28a745;
+  &:hover {
+    background-color: #28a745;
+    color: white;
+  }
+}
+
+.delete-card-btn {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 1.4rem;
+  &:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+}
+
+.kanban-column:first-child .move-btn-left {
+  display: none;
+}
+
+.kanban-column:last-child .move-btn-right {
+  display: none;
+}
+
+@media (max-width: 910px) {
+  .kanban-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kanban-column {
+    flex-grow: 0;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .move-btn-left,
+  .move-btn-right {
+    color: transparent;
+    position: relative;
+    transform: none;
+  }
+
+  .move-btn-left:hover,
+  .move-btn-right:hover {
+    color: transparent;
+  }
+
+  .move-btn-left::before,
+  .move-btn-right::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+  }
+
+  .move-btn-left::before {
+    content: '\2B06';
+  }
+  .move-btn-right::before {
+    content: '\2B07';
+  }
+
+  .move-btn-left:hover::before,
+  .move-btn-right:hover::before {
+    color: white;
+  }
+}
