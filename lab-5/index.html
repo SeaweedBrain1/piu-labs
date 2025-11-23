@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 5 - Kształty</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kształty</h1>
+      <p class="subtitle">Dodaj, koloruj i usuwaj kształty</p>
+    </header>
+
+    <nav class="controls">
+      <button id="addSquare">Kwadrat</button>
+      <button id="addCircle">Kółko</button>
+      <button id="recolorSquares">Koloruj kwadraty</button>
+      <button id="recolorCircles">Koloruj kółka</button>
+    </nav>
+
+    <section class="counters">
+      <div class="counter">Kwadraty: <span id="cntSquares">0</span></div>
+      <div class="counter">Kółka: <span id="cntCircles">0</span></div>
+    </section>
+
+    <main
+      id="board"
+      class="board"
+      aria-label="Pole z kształtami"
+      tabindex="0"
+    ></main>
+
+    <footer>
+      <p class="note">
+        Kliknij na kształt, aby go usunąć. Stan zapisuje się automatycznie.
+      </p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
